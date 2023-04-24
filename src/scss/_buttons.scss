@@ -1,0 +1,87 @@
+.btn {
+  display: inline-block;
+  min-width: 120px;
+  padding: 8px 20px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  background-color: #ff6900;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &,
+  span {
+    color: #fff;
+  }
+
+  span,
+  path,
+  svg {
+    transition: all 0.2s ease;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border-width: 2px;
+  }
+
+  &.outline {
+    background-color: transparent;
+    border-color: #ff6900;
+
+    &,
+    span {
+      color: #ff6900;
+    }
+
+    svg path {
+      fill: #ff6900;
+    }
+
+    &:hover {
+      background-color: #ff6900;
+
+      &,
+      span {
+        color: #fff;
+      }
+
+      svg path {
+        fill: #fff;
+      }
+    }
+  }
+
+  &__delimiter {
+    width: 1px;
+    height: 22px;
+    background-color: #fff;
+    margin: 0 14px;
+  }
+
+  &.outline,
+  &.cart span {
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  &.cart {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 25px;
+
+    svg {
+      margin-bottom: 2px;
+    }
+  }
+}

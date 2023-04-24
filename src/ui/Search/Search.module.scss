@@ -1,0 +1,57 @@
+@use "../../scss/_mixins" as *;
+
+.inputContainer {
+  position: relative;
+  order: 0;
+  margin: 0 auto;
+
+  @include sm {
+    order: 2;
+  }
+
+  @include lg {
+    order: 0;
+    margin: 0;
+  }
+
+  input {
+    min-width: 300px;
+    width: 100%;
+    padding: 12px 0 12px 42px;
+    font-size: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: transparent;
+
+    &:focus {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    @include sm {
+      min-width: 350px;
+    }
+  }
+
+  .searchIcon {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 14px;
+    top: 15px;
+    opacity: 0.3;
+  }
+
+  .clearIcon {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    opacity: 0.3;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

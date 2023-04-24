@@ -1,0 +1,30 @@
+@use "../../scss/_mixins" as *;
+
+.categories {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+
+  li {
+    padding: 13px 30px;
+    font-weight: 700;
+    background-color: #f9f9f9;
+    border-radius: 30px;
+    cursor: pointer;
+    user-select: none;
+
+    &.active {
+      background-color: #000;
+      color: #fff;
+    }
+
+    &:hover {
+      background-color: darken(#f9f9f9, 2%);
+    }
+  }
+
+  @include sm {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

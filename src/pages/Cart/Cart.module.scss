@@ -1,0 +1,139 @@
+@use "../../scss/_mixins" as *;
+
+.cart {
+  margin: 95px 0 130px;
+}
+
+.header {
+  @include flex(space-between, center);
+  margin-bottom: 35px;
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 32px;
+
+    svg {
+      width: 30px;
+      height: 30px;
+      position: relative;
+      top: -2px;
+
+      path {
+        stroke: #232323;
+        stroke-width: 1.9;
+      }
+    }
+  }
+
+  .clear {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+
+    span {
+      color: #b6b6b6;
+    }
+
+    span,
+    svg,
+    path {
+      transition: all 0.15 ease-in-out;
+    }
+
+    &:hover {
+      svg path {
+        stroke: darken($color: #b6b6b6, $amount: 50);
+      }
+
+      span {
+        color: darken($color: #b6b6b6, $amount: 50);
+      }
+    }
+  }
+}
+
+.content {
+  margin-bottom: 40px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  .details {
+    @include flex(space-between, center);
+
+    p {
+      font-size: 16px;
+
+      @include sm {
+        font-size: 22px;
+      }
+
+      span {
+        font-weight: 700;
+      }
+
+      &:last-child span {
+        color: #fe5f1e;
+      }
+    }
+  }
+
+  .buttons {
+    @include flex(space-between, center);
+    gap: 20px;
+    flex-direction: column;
+
+    @include sm {
+      flex-direction: row;
+      gap: 0;
+    }
+
+    a,
+    button {
+      width: 100%;
+      min-width: 210px;
+      min-height: 55px;
+
+      @include sm {
+        max-width: 210px;
+      }
+    }
+
+    button {
+      font-size: 16px;
+
+      &:first-child {
+        @include flex(center, center);
+        gap: 12px;
+        border: 1px solid #d3d3d3;
+
+        span {
+          color: #cacaca;
+        }
+
+        &:hover {
+          background-color: black;
+
+          span {
+            color: #fff;
+          }
+        }
+
+        svg path {
+          fill: transparent;
+        }
+      }
+
+      &:last-child {
+        padding: 16px;
+        font-weight: 700;
+      }
+    }
+  }
+}

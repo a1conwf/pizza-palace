@@ -1,0 +1,132 @@
+@use "../../scss/_mixins" as *;
+
+.cartItem {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 30px 0;
+  border-bottom: 1px solid #f6f6f6;
+
+  &:first-of-type {
+    border-top: 1px solid #f6f6f6;
+  }
+
+  .order,
+  .count,
+  .price {
+    justify-self: center;
+  }
+
+  .order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    justify-self: flex-start;
+
+    img {
+      width: 100%;
+    }
+
+    .info {
+      span,
+      p {
+        font-size: 16px;
+      }
+
+      span {
+        color: #8d8d8d;
+      }
+
+      h3 {
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 27px;
+        letter-spacing: 0.01em;
+      }
+    }
+  }
+
+  .controls {
+    @include flex(space-between, center);
+  }
+
+  .count {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    button:first-child svg path:first-of-type {
+      display: none;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      border-color: #787878;
+
+      svg path {
+        fill: #787878;
+      }
+
+      &:active {
+        transform: none;
+      }
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    span {
+      font-size: 22px;
+      font-weight: 700;
+    }
+  }
+
+  .price {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+
+  .remove {
+    button {
+      border-color: darken($color: #f6f6f6, $amount: 10);
+
+      svg {
+        width: 11.5px;
+        height: 11.5px;
+        position: relative;
+        transform: rotate(45deg);
+
+        path {
+          fill: darken($color: #f6f6f6, $amount: 15);
+        }
+      }
+
+      &:hover,
+      &:active {
+        border-color: darken($color: #f6f6f6, $amount: 80);
+        background-color: darken($color: #f6f6f6, $amount: 80);
+      }
+    }
+  }
+}
+
+@include sm {
+  .cartItem {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    .order {
+      flex-direction: row;
+
+      img {
+        width: 80px;
+        height: 80px;
+        align-self: flex-start;
+      }
+    }
+  }
+}

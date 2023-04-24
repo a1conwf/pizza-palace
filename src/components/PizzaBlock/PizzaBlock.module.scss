@@ -1,0 +1,74 @@
+@use "../../scss/_mixins" as *;
+
+.pizzaBlock {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  @include sm {
+    max-width: 280px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  h4,
+  p {
+    text-align: left;
+  }
+
+  h4 {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    margin-bottom: 5px;
+  }
+
+  & > p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #5c6370;
+    margin-bottom: 15px;
+  }
+
+  .selector {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: auto 0 20px;
+
+    ul {
+      display: flex;
+      flex: 1;
+      background-color: #f9f9f9;
+      border-radius: 40px;
+
+      li {
+        padding: 8px;
+        flex: 1;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
+        user-select: none;
+
+        &.active {
+          background-color: darken(#f9f9f9, 60%);
+          color: #fff;
+          border-radius: 40px;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    @include flex(space-between, center);
+
+    p {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.015em;
+    }
+  }
+}
