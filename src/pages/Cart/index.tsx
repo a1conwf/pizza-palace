@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCart } from "../../redux/cart/selectors";
 import { clearItems } from "../../redux/cart/slice";
@@ -9,12 +9,21 @@ import { CartItem, CartEmpty } from "../../components";
 import styles from "./Cart.module.scss";
 
 const Cart: React.FC = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { items, totalPrice, totalCount } = useSelector(selectCart);
 
   const handleCartClear = () => {
     if (window.confirm("Are you sure you want to clear cart?")) {
       dispatch(clearItems());
+    }
+  };
+
+  const handleSubmitOrder = () => {
+    if (window.confirm("Are you sure you want to place an order?")) {
+      alert("Your order has been placed and is being processed ");
+      dispatch(clearItems());
+      navigate("/");
     }
   };
 
@@ -113,7 +122,7 @@ const Cart: React.FC = () => {
         </div>
         <div className={styles.buttons}>
           <Link to="/">
-            <button className="btn outline add">
+            <button className="btn outline black">
               <svg
                 width="8"
                 height="14"
@@ -134,8 +143,8 @@ const Cart: React.FC = () => {
             </button>
           </Link>
 
-          <button className="btn">
-            <span>Pay now</span>
+          <button onClick={handleSubmitOrder} className="btn">
+            <span>Order now</span>
           </button>
         </div>
       </div>

@@ -16,7 +16,9 @@ const App: React.FC = () => {
         <Route
           path="*"
           element={
-            <h1 className="not-found">Oops! Could not find this page</h1>
+            <h1 className="not-found">
+              Oops! We can't seem to find the page you're looking for.
+            </h1>
           }
         />
       </Routes>

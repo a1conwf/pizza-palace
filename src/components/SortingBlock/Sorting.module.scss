@@ -1,6 +1,7 @@
 .sort {
   position: relative;
   align-self: center;
+  user-select: none;
 
   .label {
     display: flex;

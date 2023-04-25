@@ -69,8 +69,8 @@ const Home: React.FC = () => {
 
           {loading === "succeeded" && pizzasArr.length < 1 ? (
             <div className={styles.error}>
-              <h2>Oops! No results for you request </h2>
-              <p>Try another request</p>
+              <h2>Oops! Nothing was found for your request </h2>
+              <p>Try providing another request</p>
             </div>
           ) : null}
           <Pagination category={category} />

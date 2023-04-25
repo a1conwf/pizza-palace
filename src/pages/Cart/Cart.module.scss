@@ -105,34 +105,12 @@
       }
     }
 
-    button {
+    button:nth-child(2) {
       font-size: 16px;
+      font-weight: 700;
 
-      &:first-child {
-        @include flex(center, center);
-        gap: 12px;
-        border: 1px solid #d3d3d3;
-
-        span {
-          color: #cacaca;
-        }
-
-        &:hover {
-          background-color: black;
-
-          span {
-            color: #fff;
-          }
-        }
-
-        svg path {
-          fill: transparent;
-        }
-      }
-
-      &:last-child {
-        padding: 16px;
-        font-weight: 700;
+      &:hover {
+        transform: scale(1.05);
       }
     }
   }

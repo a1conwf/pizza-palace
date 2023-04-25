@@ -109,6 +109,7 @@
       &:active {
         border-color: darken($color: #f6f6f6, $amount: 80);
         background-color: darken($color: #f6f6f6, $amount: 80);
+        transform: none;
       }
     }
   }

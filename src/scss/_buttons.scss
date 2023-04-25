@@ -1,3 +1,5 @@
+@use "../scss/_mixins" as *;
+
 .btn {
   display: inline-block;
   min-width: 120px;
@@ -7,6 +9,12 @@
   background-color: #ff6900;
   cursor: pointer;
   transition: all 0.2s ease;
+
+  &.outline,
+  &.cart span {
+    font-weight: 600;
+    font-size: 16px;
+  }
 
   &,
   span {
@@ -19,19 +27,17 @@
     transition: all 0.2s ease;
   }
 
-  &:active {
-    transform: translateY(1px);
-  }
-
   &.circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex(center, center);
     min-width: 32px;
     width: 32px;
     height: 32px;
     padding: 0;
     border-width: 2px;
+
+    &:active {
+      transform: translateY(2px);
+    }
   }
 
   &.outline {
@@ -59,6 +65,30 @@
         fill: #fff;
       }
     }
+
+    &.black {
+      @include flex(center, center);
+      gap: 12px;
+      border-color: #d3d3d3;
+
+      &,
+      span {
+        color: #cacaca;
+      }
+
+      svg path {
+        fill: transparent;
+      }
+
+      &:hover {
+        background-color: #000;
+
+        &,
+        span {
+          color: #fff;
+        }
+      }
+    }
   }
 
   &__delimiter {
@@ -68,17 +98,15 @@
     margin: 0 14px;
   }
 
-  &.outline,
-  &.cart span {
-    font-weight: 600;
-    font-size: 16px;
-  }
-
   &.cart {
     display: flex;
     align-items: center;
     gap: 8px;
     padding: 12px 25px;
+
+    &:hover {
+      transform: scale(1.05);
+    }
 
     svg {
       margin-bottom: 2px;

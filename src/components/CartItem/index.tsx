@@ -39,7 +39,9 @@ export const CartItem: React.FC<CartItemProps> = ({
   };
 
   const handleItemRemove = () => {
-    if (window.confirm("Are you sure you want to delete this pizza?")) {
+    if (
+      window.confirm("Are you sure you want to remove this pizza from order?")
+    ) {
       dispatch(removeItem(foundItem));
     }
   };

@@ -57,6 +57,15 @@
           background-color: darken(#f9f9f9, 60%);
           color: #fff;
           border-radius: 40px;
+
+          &:hover {
+            background-color: darken(#f9f9f9, 60%);
+          }
+        }
+
+        &:hover {
+          background-color: darken(#f9f9f9, 5%);
+          border-radius: 40px;
         }
       }
     }
